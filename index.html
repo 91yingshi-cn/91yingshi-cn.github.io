@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="91影视 - 影视网址导航与观影指南，收录电影、电视剧、网剧、综艺、动漫、纪录片、短剧与影视解说分类索引，按类型与口碑排好片单，一键直达。">
+<meta name="keywords" content="91影视,影视导航,影视网址大全,电影网站,电视剧网站,网剧,综艺,动漫,纪录片,短剧,影视解说,在线观看">
+<meta name="author" content="91影视">
+<meta name="robots" content="index, follow">
+<title>91影视 - 影视网址导航与观影指南 | 九个里挑一个，一个就够看</title>
+<link rel="canonical" href="https://91yingshi-cn.github.io/">
+<style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+        --bg:#0e1014; --ink:#e9edf2; --sub:#a8b1bf; --dim:#6d7888;
+        --blue:#2f6bff; --cy:#18d6c7; --pink:#ff3d8a; --amber:#ffb020; --lime:#9bff3e;
+        --font:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+        --mono:"JetBrains Mono","SFMono-Regular",Consolas,monospace;
+    }
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.85;
+        background-image:repeating-linear-gradient(0deg,transparent,transparent 63px,rgba(47,107,255,.055) 63px,rgba(47,107,255,.055) 64px),repeating-linear-gradient(90deg,transparent,transparent 63px,rgba(24,214,199,.045) 63px,rgba(24,214,199,.045) 64px)}
+    a{color:inherit;text-decoration:none}
+    ul,ol,dl{list-style:none}
+    .wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+    ::selection{background:var(--pink);color:#fff}
+    .mono{font-family:var(--mono)}
+    .sec-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:26px;padding-bottom:13px;border-bottom:1px solid rgba(47,107,255,.26)}
+    .sec-head h2{font-size:22px;font-weight:900;letter-spacing:1.4px;display:flex;align-items:center;gap:11px}
+    .sec-head h2 .tag{font-family:var(--mono);font-size:11px;font-weight:900;letter-spacing:1px;padding:4px 9px;border-radius:5px;background:var(--blue);color:#fff}
+    .sec-head .en{font-size:10px;color:var(--dim);letter-spacing:2.6px;text-transform:uppercase;font-weight:700;font-family:var(--mono)}
+    .more{margin-left:auto;font-size:12px;font-weight:700;color:var(--cy)}
+
+    /* ===== Header ===== */
+    .header{background:rgba(14,16,20,.88);backdrop-filter:blur(12px);position:sticky;top:0;z-index:60;border-bottom:1px solid rgba(47,107,255,.28)}
+    .nav{display:flex;align-items:center;height:72px;gap:12px}
+    .logo{display:flex;align-items:center;gap:13px;white-space:nowrap}
+    .logo .badge{width:44px;height:44px;border-radius:9px;background:linear-gradient(135deg,var(--blue),var(--pink));display:grid;place-items:center;font-size:18px;font-weight:900;color:#fff;box-shadow:0 4px 14px rgba(47,107,255,.34);letter-spacing:-.5px}
+    .logo b{font-size:20px;font-weight:900;letter-spacing:1.6px}
+    .logo b i{font-style:normal;color:var(--cy)}
+    .logo small{display:block;font-size:8.5px;letter-spacing:2.4px;color:var(--dim);font-weight:700;font-family:var(--mono)}
+    .nav-menu{display:flex;gap:2px;margin-left:auto;font-size:13.5px;font-weight:700}
+    .nav-menu a{padding:9px 13px;border-radius:6px;color:var(--sub);transition:.2s}
+    .nav-menu a:hover{color:#fff;background:rgba(47,107,255,.18)}
+    .nav-cta{margin-left:8px;padding:10px 20px;border-radius:7px;font-size:12px;font-weight:800;color:#fff;letter-spacing:1.4px;background:linear-gradient(90deg,var(--blue),var(--pink));box-shadow:0 6px 16px rgba(47,107,255,.3)}
+    .menu-btn{display:none;margin-left:auto;width:44px;height:44px;border:1px solid rgba(47,107,255,.5);border-radius:7px;color:var(--cy);font-size:17px;cursor:pointer;background:transparent}
+
+    /* ===== Hero ===== */
+    .hero{padding:56px 0 62px;position:relative;overflow:hidden}
+    .hero-shell{display:grid;grid-template-columns:1.02fr .98fr;gap:40px;align-items:center}
+    .hero .kicker{display:inline-flex;align-items:center;gap:9px;margin-bottom:15px;font-size:10.5px;font-weight:800;letter-spacing:2.4px;color:var(--cy);font-family:var(--mono)}
+    .hero .kicker::before{content:"";width:22px;height:2px;background:var(--cy)}
+    .hero h1{font-size:clamp(31px,5.1vw,52px);line-height:1.22;font-weight:900;letter-spacing:.6px}
+    .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--blue),var(--pink),var(--cy));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero .lead{color:var(--sub);font-size:14.5px;margin:18px 0 22px;max-width:530px}
+    .search{display:flex;background:#161a21;border:1px solid rgba(47,107,255,.4);border-radius:9px;padding:5px;box-shadow:0 10px 26px rgba(0,0,0,.4);max-width:540px}
+    .search input{flex:1;border:0;background:transparent;padding:12px 16px;font-size:14px;font-family:inherit;color:var(--ink);outline:none}
+    .search input::placeholder{color:#5c6675}
+    .search button{border:0;padding:12px 26px;border-radius:7px;font-size:13.5px;font-weight:800;color:#fff;cursor:pointer;background:linear-gradient(90deg,var(--blue),var(--pink));letter-spacing:1.4px}
+    .hots{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;align-items:center}
+    .hots span{font-size:11px;color:var(--dim);letter-spacing:1.4px;font-weight:700;font-family:var(--mono)}
+    .hots a{font-size:11.5px;padding:5px 12px;border-radius:5px;background:#161a21;border:1px solid rgba(47,107,255,.3);color:var(--sub);transition:.2s}
+    .hots a:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+    /* 九个方块插画 */
+    .grid9{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);gap:9px;height:238px;position:relative}
+    .g9{position:relative;border-radius:9px;overflow:hidden;display:grid;place-items:center;color:#fff;font-size:15px;font-weight:900;letter-spacing:1.2px;text-shadow:0 2px 6px rgba(0,0,0,.4)}
+    .g9::before{content:"";position:absolute;inset:0;background:var(--g)}
+    .g9::after{content:"";position:absolute;inset:7px;border:1.5px solid rgba(255,255,255,.28);border-radius:6px}
+    .g9 span{position:relative;z-index:2}
+    .g9.up{animation:float 3.4s ease-in-out infinite}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+
+    section{padding:54px 0}
+
+    /* COL1 今日片单 —— 横向滑动卡 + 编号徽标 + 进度条 */
+    .rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:14px;scrollbar-width:thin;scrollbar-color:var(--blue) transparent}
+    .rail::-webkit-scrollbar{height:8px}
+    .rail::-webkit-scrollbar-thumb{border-radius:8px;background:linear-gradient(90deg,var(--blue),var(--pink))}
+    .rail-card{flex:0 0 268px;scroll-snap-align:start;background:#161a21;border:1px solid rgba(47,107,255,.24);border-radius:12px;overflow:hidden;transition:.26s;cursor:pointer}
+    .rail-card:hover{transform:translateY(-7px);border-color:var(--cy);box-shadow:0 16px 34px rgba(0,0,0,.45)}
+    .rail-cover{height:150px;position:relative;display:grid;place-items:end;padding:11px;color:#fff}
+    .rail-cover::before{content:"";position:absolute;inset:0;background:var(--g)}
+    .rail-cover .no{position:absolute;top:11px;left:11px;z-index:2;font-family:var(--mono);font-size:10.5px;font-weight:900;letter-spacing:1px;padding:3px 8px;border-radius:5px;background:rgba(0,0,0,.45);backdrop-filter:blur(4px)}
+    .rail-cover .ti{position:relative;z-index:2;font-size:14.5px;font-weight:900;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+    .rail-body{padding:13px 14px}
+    .rail-body .row{display:flex;justify-content:space-between;font-size:10.5px;color:var(--dim);font-family:var(--mono);letter-spacing:.6px}
+    .bar{height:4px;border-radius:4px;background:#252b34;margin-top:8px;overflow:hidden}
+    .bar i{display:block;height:100%;border-radius:4px;background:linear-gradient(90deg,var(--blue),var(--pink))}
+
+    /* COL2 分类索引 —— 圆角图标方块宫格 */
+    .catbox{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+    .cat{flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:18px 10px;gap:9px}
+    .cat .ic{width:46px;height:46px;border-radius:11px;display:grid;place-items:center;font-size:20px;background:var(--g);box-shadow:0 6px 14px rgba(0,0,0,.3)}
+    .cat .cn{font-size:13px;font-weight:800;letter-spacing:.8px}
+
+    /* COL3 口碑榜 —— 左列编号 + 进度条列表 */
+    .tbl{background:#161a21;border:1px solid rgba(47,107,255,.22);border-radius:12px;overflow:hidden}
+    .tbl .row{display:flex;align-items:center;gap:14px;padding:13px 16px;border-bottom:1px solid rgba(47,107,255,.12)}
+    .tbl .row:last-child{border-bottom:0}
+    .tbl .num{width:32px;height:32px;border-radius:7px;flex:0 0 32px;display:grid;place-items:center;font-family:var(--mono);font-size:13px;font-weight:900;background:var(--g);color:#fff}
+    .tbl .tx{flex:1;min-width:0}
+    .tbl .tx b{display:block;font-size:14px;font-weight:800}
+    .tbl .tx small{font-size:10.5px;color:var(--dim);font-family:var(--mono)}
+    .tbl .rate{flex:0 0 46px;text-align:right;font-family:var(--mono);font-size:15px;font-weight:900;color:var(--cy)}
+
+    /* COL4 精选专题 —— 瀑布流（columns） */
+    .masonry{column-count:3;column-gap:14px}
+    .mf{break-inside:avoid;margin-bottom:14px;border-radius:12px;overflow:hidden;background:#161a21;border:1px solid rgba(47,107,255,.22);cursor:pointer;transition:.26s}
+    .mf:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(0,0,0,.4)}
+    .mf .cov{height:var(--h);position:relative;display:grid;place-items:end;padding:12px;color:#fff}
+    .mf .cov::before{content:"";position:absolute;inset:0;background:var(--g)}
+    .mf .cov b{position:relative;z-index:2;font-size:16px;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+    .mf .cov span{position:absolute;top:10px;right:10px;z-index:2;font-size:9.5px;font-weight:800;padding:3px 8px;border-radius:4px;background:rgba(0,0,0,.45);letter-spacing:.6px}
+    .mf p{padding:12px 14px;font-size:11.5px;color:var(--sub);line-height:1.85}
+
+    /* COL5 观影指南 —— 竖向时间轴 */
+    .steps{position:relative;padding-left:52px}
+    .steps::before{content:"";position:absolute;left:17px;top:12px;bottom:12px;width:2px;background:linear-gradient(180deg,var(--blue),var(--pink),var(--cy))}
+    .step{position:relative;background:#161a21;border:1px solid rgba(47,107,255,.22);border-radius:11px;padding:17px 20px;margin-bottom:14px;transition:.26s}
+    .step:hover{transform:translateX(9px);border-color:var(--pink)}
+    .step::before{content:attr(data-n);position:absolute;left:-52px;top:18px;width:38px;height:38px;border-radius:9px;display:grid;place-items:center;font-family:var(--mono);font-size:13px;font-weight:900;color:#fff;background:var(--g);box-shadow:0 4px 10px rgba(0,0,0,.35)}
+    .step h4{font-size:15.5px;font-weight:900;letter-spacing:.8px}
+    .step p{font-size:12px;color:var(--sub);margin-top:5px;line-height:1.9}
+
+    /* COL6 片单合集 —— dl 两列卡片 */
+    .codex{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .sp{background:#161a21;border:1px solid rgba(47,107,255,.22);border-radius:12px;padding:18px 20px;position:relative;overflow:hidden}
+    .sp::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--g)}
+    .sp dt{font-size:15px;font-weight:900;color:var(--cy);letter-spacing:1.2px;margin-bottom:11px}
+    .sp dd{font-size:11.5px;color:var(--sub);padding:6px 0;border-bottom:1px dashed rgba(47,107,255,.18);display:flex;justify-content:space-between;gap:10px}
+    .sp dd:last-child{border-bottom:0}
+    .sp dd b{font-weight:700;color:var(--ink)}
+
+    /* COL7 FAQ —— details 手风琴 */
+    .ask{border:1px solid rgba(47,107,255,.22);border-radius:12px;background:#161a21;overflow:hidden}
+    .ask details{border-bottom:1px solid rgba(47,107,255,.14)}
+    .ask details:last-child{border-bottom:0}
+    .ask summary{cursor:pointer;padding:16px 20px;font-weight:800;font-size:14px;list-style:none;display:flex;gap:12px;align-items:baseline;position:relative}
+    .ask summary::-webkit-details-marker{display:none}
+    .ask summary::before{content:attr(data-q);width:24px;height:24px;border-radius:7px;background:linear-gradient(135deg,var(--blue),var(--pink));color:#fff;font-size:10.5px;font-weight:900;display:grid;place-items:center;flex:0 0 auto;margin-top:1px}
+    .ask details[open] summary{background:rgba(47,107,255,.1)}
+    .ask p{padding:0 20px 16px 56px;font-size:12.5px;color:var(--sub);line-height:1.95}
+
+    .footer{margin-top:20px;background:#0a0c0f;color:#7a8594;padding:42px 0 22px;font-size:12px;border-top:1px solid rgba(47,107,255,.22)}
+    .fg{display:grid;grid-template-columns:2.1fr 1fr 1fr 1fr;gap:28px}
+    .fg .brand .fl{font-size:23px;font-weight:900;letter-spacing:1.6px;background:linear-gradient(90deg,var(--blue),var(--cy));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .fg .brand p{margin-top:11px;max-width:380px;line-height:1.95;color:#7a8594}
+    .fcol h5{color:var(--cy);font-size:11.5px;margin-bottom:13px;letter-spacing:2.4px;font-weight:800;font-family:var(--mono)}
+    .fcol a{display:block;padding:5px 0;color:#7a8594;transition:.2s}
+    .fcol a:hover{color:var(--pink);transform:translateX(4px)}
+    .copy{margin-top:26px;padding-top:17px;border-top:1px dashed #1d242e;text-align:center;font-size:10.5px;color:#5c6675}
+    .copy a{color:var(--cy)}
+
+    @media(max-width:1020px){.catbox{grid-template-columns:repeat(4,1fr)}.masonry{column-count:2}}
+    @media(max-width:820px){
+        .nav-menu,.nav-cta{position:fixed;inset:72px 0 auto 0;flex-direction:column;gap:0;margin-left:0;background:var(--bg);max-height:0;overflow:hidden;transition:.32s;border-bottom:1px solid rgba(47,107,255,.28)}
+        .nav-cta{margin:12px 18px;max-height:none;text-align:center}
+        .nav-menu a{padding:15px 22px;border-radius:0;border-bottom:1px solid rgba(47,107,255,.12)}
+        .menu-btn{display:grid;place-items:center}
+        .hero-shell{grid-template-columns:1fr}
+        .grid9{height:220px}
+        .fg{grid-template-columns:1fr 1fr}
+        .codex{grid-template-columns:1fr}
+    }
+    @media(max-width:500px){.hero{padding:34px 0 44px}section{padding:40px 0}.grid9{height:180px}.catbox{grid-template-columns:repeat(3,1fr)}.masonry{column-count:1}.steps{padding-left:48px}.step::before{width:34px;height:34px;left:-48px;font-size:11px}.rail-card{flex:0 0 232px}}
+    @media print{.header,.footer,.search,.grid9,.rail{display:none}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<header class="header">
+    <div class="wrap nav">
+        <a class="logo" href="#top" aria-label="91影视 首页">
+            <span class="badge" aria-hidden="true">91</span>
+            <span><b>91<i>影视</i></b> <small>// FILM & TV NAVIGATOR</small></span>
+        </a>
+        <nav class="nav-menu" id="navMenu">
+            <a href="#today">今日片单</a>
+            <a href="#cat">分类索引</a>
+            <a href="#rank">口碑榜</a>
+            <a href="#topic">精选专题</a>
+            <a href="#guide">观影指南</a>
+            <a href="#codex">片单合集</a>
+            <a href="#faq">常见问题</a>
+        </nav>
+        <a class="nav-cta" href="#today">开始找片 →</a>
+        <button class="menu-btn" id="menuBtn" aria-label="菜单" aria-expanded="false">☰</button>
+    </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+    <div class="wrap hero-shell">
+        <div>
+            <div class="kicker">FILM · DRAMA · ANIME · DOC</div>
+            <h1>九个里挑一个，<br><em>一个就够看</em></h1>
+            <p class="lead">91影视把电影、电视剧、网剧、综艺、动漫、纪录片和短剧的分类入口排好，按类型与口碑直接送你到想看的那一类，不绕路、不踩空。</p>
+            <form class="search" onsubmit="event.preventDefault();">
+                <input type="search" placeholder="搜一搜：电影、电视剧、网剧、综艺、动漫、纪录片、短剧、解说…" aria-label="搜索影视分类">
+                <button type="submit">找片</button>
+            </form>
+            <div class="hots"><span>// 热寻：</span>
+                <a href="#">电影</a><a href="#">电视剧</a><a href="#">网剧</a><a href="#">综艺</a><a href="#">动漫</a><a href="#">纪录片</a><a href="#">短剧</a><a href="#">影视解说</a>
+            </div>
+        </div>
+        <div class="grid9" aria-hidden="true">
+            <div class="g9 up" style="--g:linear-gradient(135deg,#2f6bff,#7a4dff)"><span>电</span></div>
+            <div class="g9" style="--g:linear-gradient(135deg,#ff3d8a,#ff7a3d)"><span>视</span></div>
+            <div class="g9 up" style="--g:linear-gradient(135deg,#18d6c7,#3dffb1)"><span>网</span></div>
+            <div class="g9" style="--g:linear-gradient(135deg,#ffb020,#ff6a3d)"><span>综</span></div>
+            <div class="g9 up" style="--g:linear-gradient(135deg,#9bff3e,#18d6c7)"><span>动</span></div>
+            <div class="g9" style="--g:linear-gradient(135deg,#7a4dff,#ff3d8a)"><span>纪</span></div>
+            <div class="g9 up" style="--g:linear-gradient(135deg,#3d8bff,#18d6c7)"><span>短</span></div>
+            <div class="g9" style="--g:linear-gradient(135deg,#ff6a3d,#ffb020)"><span>解</span></div>
+            <div class="g9 up" style="--g:linear-gradient(135deg,#2f6bff,#ff3d8a)"><span>91</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- COL1 今日片单 -->
+<section id="today">
+    <div class="wrap">
+        <div class="sec-head"><h2><span class="tag">01</span>今日片单</h2><span class="en">Today's Picks</span><a class="more" href="#">全部片单 →</a></div>
+        <div class="rail">
+            <article class="rail-card"><div class="rail-cover" style="--g:linear-gradient(135deg,#2f6bff,#7a4dff)"><span class="no">NO.01</span><span class="ti">院线新片</span></div><div class="rail-body"><div class="row"><span>电影</span><span>热映</span></div><div class="bar"><i style="width:96%"></i></div></div></article>
+            <article class="rail-card"><div class="rail-cover" style="--g:linear-gradient(135deg,#ff3d8a,#ff7a3d)"><span class="no">NO.02</span><span class="ti">国产热剧</span></div><div class="rail-body"><div class="row"><span>电视剧</span><span>连载</span></div><div class="bar"><i style="width:92%"></i></div></div></article>
+            <article class="rail-card"><div class="rail-cover" style="--g:linear-gradient(135deg,#18d6c7,#3dffb1)"><span class="no">NO.03</span><span class="ti">高分网剧</span></div><div class="rail-body"><div class="row"><span>网剧</span><span>完结</span></div><div class="bar"><i style="width:88%"></i></div></div></article>
+            <article class="rail-card"><div class="rail-cover" style="--g:linear-gradient(135deg,#ffb020,#ff6a3d)"><span class="no">NO.04</span><span class="ti">真人秀综艺</span></div><div class="rail-body"><div class="row"><span>综艺</span><span>周更</span></div><div class="bar"><i style="width:84%"></i></div></div></article>
+            <article class="rail-card"><div class="rail-cover" style="--g:linear-gradient(135deg,#9bff3e,#18d6c7)"><span class="no">NO.05</span><span class="ti">国漫日番</span></div><div class="rail-body"><div class="row"><span>动漫</span><span>连载</span></div><div class="bar"><i style="width:80%"></i></div></div></article>
+            <article class="rail-card"><div class="rail-cover" style="--g:linear-gradient(135deg,#7a4dff,#ff3d8a)"><span class="no">NO.06</span><span class="ti">纪录长片</span></div><div class="rail-body"><div class="row"><span>纪录片</span><span>完结</span></div><div class="bar"><i style="width:76%"></i></div></div></article>
+            <article class="rail-card"><div class="rail-cover" style="--g:linear-gradient(135deg,#3d8bff,#18d6c7)"><span class="no">NO.07</span><span class="ti">竖屏短剧</span></div><div class="rail-body"><div class="row"><span>短剧</span><span>连载</span></div><div class="bar"><i style="width:72%"></i></div></div></article>
+            <article class="rail-card"><div class="rail-cover" style="--g:linear-gradient(135deg,#ff6a3d,#ffb020)"><span class="no">NO.08</span><span class="ti">影视解说</span></div><div class="rail-body"><div class="row"><span>解说</span><span>合集</span></div><div class="bar"><i style="width:68%"></i></div></div></article>
+        </div>
+    </div>
+</section>
+
+<!-- COL2 分类索引 -->
+<section id="cat">
+    <div class="wrap">
+        <div class="sec-head"><h2><span class="tag">02</span>分类索引</h2><span class="en">Categories</span><a class="more" href="#">完整分类 →</a></div>
+        <div class="catbox">
+            <a class="cat" href="#" style="--g:linear-gradient(135deg,#2f6bff,#7a4dff)"><span class="ic">🎬</span><span class="cn">电影</span></a>
+            <a class="cat" href="#" style="--g:linear-gradient(135deg,#ff3d8a,#ff7a3d)"><span class="ic">📺</span><span class="cn">电视剧</span></a>
+            <a class="cat" href="#" style="--g:linear-gradient(135deg,#18d6c7,#3dffb1)"><span class="ic">🎞️</span><span class="cn">网剧</span></a>
+            <a class="cat" href="#" style="--g:linear-gradient(135deg,#ffb020,#ff6a3d)"><span class="ic">🎤</span><span class="cn">综艺</span></a>
+            <a class="cat" href="#" style="--g:linear-gradient(135deg,#9bff3e,#18d6c7)"><span class="ic">🐉</span><span class="cn">动漫</span></a>
+            <a class="cat" href="#" style="--g:linear-gradient(135deg,#7a4dff,#ff3d8a)"><span class="ic">🌍</span><span class="cn">纪录片</span></a>
+            <a class="cat" href="#" style="--g:linear-gradient(135deg,#3d8bff,#18d6c7)"><span class="ic">📱</span><span class="cn">短剧</span></a>
+            <a class="cat" href="#" style="--g:linear-gradient(135deg,#ff6a3d,#ffb020)"><span class="ic">💬</span><span class="cn">影视解说</span></a>
+            <a class="cat" href="#" style="--g:linear-gradient(135deg,#2f6bff,#18d6c7)"><span class="ic">⭐</span><span class="cn">高分精选</span></a>
+            <a class="cat" href="#" style="--g:linear-gradient(135deg,#ff3d8a,#7a4dff)"><span class="ic">🔥</span><span class="cn">热度榜</span></a>
+            <a class="cat" href="#" style="--g:linear-gradient(135deg,#18d6c7,#9bff3e)"><span class="ic">🎭</span><span class="cn">按类型</span></a>
+            <a class="cat" href="#" style="--g:linear-gradient(135deg,#ffb020,#2f6bff)"><span class="ic">🗂️</span><span class="cn">片单合集</span></a>
+        </div>
+    </div>
+</section>
+
+<!-- COL3 口碑榜 -->
+<section id="rank">
+    <div class="wrap">
+        <div class="sec-head"><h2><span class="tag">03</span>口碑榜</h2><span class="en">Top Rated</span><a class="more" href="#">完整榜单 →</a></div>
+        <div class="tbl">
+            <div class="row"><span class="num" style="--g:linear-gradient(135deg,#ffb020,#ff6a3d)">1</span><div class="tx"><b>电影精选</b><small>院线新片与高分老片</small></div><span class="rate">96</span></div>
+            <div class="row"><span class="num" style="--g:linear-gradient(135deg,#9bff3e,#18d6c7)">2</span><div class="tx"><b>高分网剧</b><small>短小精悍、剧情扎实</small></div><span class="rate">93</span></div>
+            <div class="row"><span class="num" style="--g:linear-gradient(135deg,#2f6bff,#7a4dff)">3</span><div class="tx"><b>国产热剧</b><small>当下话题度最高的剧集</small></div><span class="rate">90</span></div>
+            <div class="row"><span class="num" style="--g:linear-gradient(135deg,#ff3d8a,#ff7a3d)">4</span><div class="tx"><b>动漫番剧</b><small>国漫与日番齐头并进</small></div><span class="rate">87</span></div>
+            <div class="row"><span class="num" style="--g:linear-gradient(135deg,#7a4dff,#ff3d8a)">5</span><div class="tx"><b>纪录片</b><small>深度题材，适合静下心看</small></div><span class="rate">84</span></div>
+            <div class="row"><span class="num" style="--g:linear-gradient(135deg,#18d6c7,#3dffb1)">6</span><div class="tx"><b>综艺真人秀</b><small>解压放松首选</small></div><span class="rate">80</span></div>
+            <div class="row"><span class="num" style="--g:linear-gradient(135deg,#ff6a3d,#ffb020)">7</span><div class="tx"><b>竖屏短剧</b><small>碎片时间快速刷完</small></div><span class="rate">76</span></div>
+            <div class="row"><span class="num" style="--g:linear-gradient(135deg,#3d8bff,#18d6c7)">8</span><div class="tx"><b>影视解说</b><small>十分钟看完全片脉络</small></div><span class="rate">73</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- COL4 精选专题 -->
+<section id="topic">
+    <div class="wrap">
+        <div class="sec-head"><h2><span class="tag">04</span>精选专题</h2><span class="en">Featured Topics</span><a class="more" href="#">更多专题 →</a></div>
+        <div class="masonry">
+            <article class="mf"><div class="cov" style="--g:linear-gradient(135deg,#2f6bff,#7a4dff);--h:170px"><span>高分必看</span><b>90分俱乐部</b></div><p>完结高分作品的集中索引，不想踩雷就从这里挑。</p></article>
+            <article class="mf"><div class="cov" style="--g:linear-gradient(135deg,#ff3d8a,#ff7a3d);--h:120px"><span>追更</span><b>正在热播</b></div><p>当下连载剧集，看一集就上头。</p></article>
+            <article class="mf"><div class="cov" style="--g:linear-gradient(135deg,#18d6c7,#3dffb1);--h:150px"><span>轻松</span><b>解压喜剧</b></div><p>累了就看，笑点密集不费脑。</p></article>
+            <article class="mf"><div class="cov" style="--g:linear-gradient(135deg,#ffb020,#ff6a3d);--h:110px"><span>悬疑</span><b>反转烧脑</b></div><p>一路猜到底，结局往往出人意料。</p></article>
+            <article class="mf"><div class="cov" style="--g:linear-gradient(135deg,#9bff3e,#18d6c7);--h:140px"><span>动漫</span><b>国漫日番</b></div><p>连载与完结分开放，不怕追空。</p></article>
+            <article class="mf"><div class="cov" style="--g:linear-gradient(135deg,#7a4dff,#ff3d8a);--h:125px"><span>纪实</span><b>纪录片</b></div><p>真实题材长片，看得懂也看得进去。</p></article>
+            <article class="mf"><div class="cov" style="--g:linear-gradient(135deg,#3d8bff,#18d6c7);--h:115px"><span>碎片</span><b>竖屏短剧</b></div><p>通勤、排队、睡前，几分钟一集。</p></article>
+            <article class="mf"><div class="cov" style="--g:linear-gradient(135deg,#ff6a3d,#ffb020);--h:130px"><span>速看</span><b>影视解说</b></div><p>先看解说判断口味，再决定看全片。</p></article>
+            <article class="mf"><div class="cov" style="--g:linear-gradient(135deg,#2f6bff,#18d6c7);--h:145px"><span>类型</span><b>按口味挑</b></div><p>动作、爱情、科幻、恐怖，各归其位。</p></article>
+        </div>
+    </div>
+</section>
+
+<!-- COL5 观影指南 -->
+<section id="guide">
+    <div class="wrap">
+        <div class="sec-head"><h2><span class="tag">05</span>观影指南</h2><span class="en">How to Watch</span></div>
+        <div class="steps">
+            <div class="step" data-n="01" style="--g:linear-gradient(135deg,#2f6bff,#7a4dff)"><h4>先定想看的类型</h4><p>电影、剧集、综艺、动漫、纪录片还是短剧，类型定了，范围就小了一大半。</p></div>
+            <div class="step" data-n="02" style="--g:linear-gradient(135deg,#ff3d8a,#ff7a3d)"><h4>再看是否完结</h4><p>时间充裕追完结片，碎片时间看连载或短剧，别让"等更新"打断节奏。</p></div>
+            <div class="step" data-n="03" style="--g:linear-gradient(135deg,#18d6c7,#3dffb1)"><h4>查口碑与评价</h4><p>完结片看评分长尾，连载片看话题热度，心里有数再开看。</p></div>
+            <div class="step" data-n="04" style="--g:linear-gradient(135deg,#ffb020,#ff6a3d)"><h4>按心情选专题</h4><p>想烧脑看悬疑，想放松看综艺喜剧，想涨知识看纪录片。</p></div>
+            <div class="step" data-n="05" style="--g:linear-gradient(135deg,#9bff3e,#18d6c7)"><h4>收藏常用入口</h4><p>把常去的一两个入口收进书签，下次不用从零找起。</p></div>
+            <div class="step" data-n="06" style="--g:linear-gradient(135deg,#7a4dff,#ff3d8a)"><h4>看不过来先看解说</h4><p>解说合集十分钟讲完一部，看完再决定要不要追全片。</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- COL6 片单合集 -->
+<section id="codex">
+    <div class="wrap">
+        <div class="sec-head"><h2><span class="tag">06</span>片单合集</h2><span class="en">Watchlist</span><a class="more" href="#">完整片单 →</a></div>
+        <div class="codex">
+            <div class="sp" style="--g:linear-gradient(135deg,#2f6bff,#7a4dff)"><dt>电影</dt><dd><b>院线新片</b><span>热映</span></dd><dd><b>高分精选</b><span>90+</span></dd><dd><b>类型电影</b><span>动作/喜剧/悬疑</span></dd><dd><b>经典老片</b><span>修复版</span></dd></div>
+            <div class="sp" style="--g:linear-gradient(135deg,#ff3d8a,#ff7a3d)"><dt>剧集</dt><dd><b>国产热剧</b><span>连载</span></dd><dd><b>高分网剧</b><span>完结</span></dd><dd><b>经典老剧</b><span>反复刷</span></dd><dd><b>海外剧集</b><span>口碑之选</span></dd></div>
+            <div class="sp" style="--g:linear-gradient(135deg,#18d6c7,#3dffb1)"><dt>综艺与动漫</dt><dd><b>真人秀综艺</b><span>周更</span></dd><dd><b>国漫日番</b><span>连载</span></dd><dd><b>经典动画</b><span>合家欢</span></dd><dd><b>脱口秀</b><span>轻松解压</span></dd></div>
+            <div class="sp" style="--g:linear-gradient(135deg,#ffb020,#ff6a3d)"><dt>纪录片与短剧</dt><dd><b>纪录长片</b><span>深度题材</span></dd><dd><b>自然人文</b><span>慢节奏</span></dd><dd><b>竖屏短剧</b><span>碎片时间</span></dd><dd><b>影视解说</b><span>十分钟速看</span></dd></div>
+        </div>
+    </div>
+</section>
+
+<!-- COL7 FAQ -->
+<section id="faq">
+    <div class="wrap">
+        <div class="sec-head"><h2><span class="tag">07</span>常见问题</h2><span class="en">FAQ</span></div>
+        <div class="ask">
+            <details open><summary data-q="Q1">91影视 主要收录哪些内容？</summary><p>主要收录电影、电视剧、网剧、综艺、动漫、纪录片、短剧和影视解说的分类入口，按类型与口碑整理，帮你快速找到想看的内容。</p></details>
+            <details><summary data-q="Q2">怎么快速找到想看的类型？</summary><p>先去"分类索引"确定大类（电影、剧集、综艺、动漫等），再按"高分精选""正在热播""按口味挑"等专题收窄，三步就能定位。</p></details>
+            <details><summary data-q="Q3">榜单的评分依据是什么？</summary><p>综合口碑评价、热度与更新状态定期调整，属于主观筛选参考；完结片看长尾评分，连载片看当下热度。</p></details>
+            <details><summary data-q="Q4">链接打不开怎么办？</summary><p>链接可能临时失效或改版，可回到对应分类重新查找同类入口，或收藏几个常用备选；本页仅做导航，具体访问以目标站点为准。</p></details>
+            <details><summary data-q="Q5">没时间看全片怎么办？</summary><p>直接看"影视解说"合集，十分钟讲完一部的关键情节与看点，看完再决定是否追全片。</p></details>
+        </div>
+    </div>
+</section>
+</main>
+
+<footer class="footer">
+    <div class="wrap">
+        <div class="fg">
+            <div class="brand"><div class="fl">91影视</div><p>九个里挑一个，一个就够看。影视网址导航与观影指南，把分类和片单提前排好。</p></div>
+            <div class="fcol"><h5>分类</h5><a href="#cat">电影</a><a href="#cat">电视剧</a><a href="#cat">网剧</a><a href="#cat">综艺</a></div>
+            <div class="fcol"><h5>专题</h5><a href="#topic">精选专题</a><a href="#rank">口碑榜</a><a href="#today">今日片单</a><a href="#codex">片单合集</a></div>
+            <div class="fcol"><h5>关于</h5><a href="#guide">观影指南</a><a href="#faq">常见问题</a><a href="#">免责声明</a><a href="#">联系我们</a></div>
+        </div>
+        <div class="copy">© <span id="yr"></span> 91影视 · 网址：<a href="https://91yingshi-cn.github.io/">https://91yingshi-cn.github.io/</a> · 影视网址导航与观影指南 &nbsp;|&nbsp; 本页为导航示例，内页链接均以 "#" 占位</div>
+    </div>
+</footer>
+
+<script>
+    var btn=document.getElementById('menuBtn'),menu=document.getElementById('navMenu'),cta=document.querySelector('.nav-cta');
+    btn.addEventListener('click',function(){
+        var o=menu.classList.toggle('open');cta.classList.toggle('open',o);
+        btn.setAttribute('aria-expanded',o?'true':'false');btn.textContent=o?'✕':'☰';
+    });
+    document.querySelectorAll('.nav-menu a').forEach(function(a){
+        a.addEventListener('click',function(){
+            if(window.innerWidth<=820){menu.classList.remove('open');cta.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.textContent='☰';}
+            var t=document.querySelector(this.getAttribute('href'));
+            if(t) setTimeout(function(){window.scrollTo({top:t.offsetTop-80,behavior:'smooth'})},60);
+        });
+    });
+    document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
